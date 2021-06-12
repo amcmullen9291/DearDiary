@@ -76,6 +76,12 @@
 
 }
 
+.entryDate{
+width: 245px;
+color:grey;
+background: khaki;
+}
+
 .entryHeader {
 	margin-left: 6%;
 	line-height: 3;
@@ -133,3 +139,4 @@
 	opacity: 1;
 	right: 10px;
 }
+

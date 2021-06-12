@@ -27,9 +27,7 @@ class Home extends React.Component {
             <br/>
             <textarea className="papers" name="content"></textarea><br/>
             <br/>
-            {this.state.day}, <br/>
-              {this.state.date}
-            <br/>
+            <input className="entryDate" type="text" name="date" readonly="read-only" value={this.state.day + " " + this.state.date}></input>
             <br/>
             {/* <input className="entrySubmit" type="submit" name="submit" value="Okay"></input> */}
             <button  className="entrySubmit" onclick="document.getElementById('entryForm').submit()">Okay</button>
