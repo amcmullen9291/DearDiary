@@ -1,12 +1,19 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import Home from './Components/Home.js';
+import Entry from './Components/Entry.js';
 
 function App() {
   return (
     <>
-    <div className="App">
-    <center><h1 className="titleBanner">ᗪEᗩᖇ ᗪIᗩᖇY..</h1></center>
-    <center><button class="myButton">Past Notes</button><button class="myButton">Something New</button></center>
-    </div>
+    <Router>
+      <Switch>
+          <Route path={"/"} exact component={Home}/>
+          <Route path={"/Home"} exact component={Home}/>
+          <Route path={"/entry"} exact component={Entry}/>
+          <Redirect to={"/"} />
+        </Switch>
+    </Router>
     </>
   );
 }
