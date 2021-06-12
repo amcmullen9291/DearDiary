@@ -8,7 +8,8 @@ class Home extends React.Component {
     super(props)
     this.state = {
       currentDate: new Date(),
-      today: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a")      
+      day : moment(new Date()).format("dddd"),
+      date: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a")      
   }
 }
 
@@ -26,7 +27,8 @@ class Home extends React.Component {
             <br/>
             <textarea className="papers" name="content"></textarea><br/>
             <br/>
-              {this.state.today}
+            {this.state.day}, <br/>
+              {this.state.date}
             <br/>
             <br/>
             {/* <input className="entrySubmit" type="submit" name="submit" value="Okay"></input> */}
