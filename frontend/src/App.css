@@ -1,4 +1,4 @@
-Body {
+.App {
   background-image: url("./images/background.jpg");
 }
 
@@ -74,4 +74,62 @@ Body {
 	background: #F5CAA8;
 	position: relative;
 
+}
+
+.entryHeader {
+	margin-left: 6%;
+	line-height: 3;
+	width: 35%;
+	font-size: 14px;
+	font-weight:bolder;
+}
+
+.entrySubmit {
+	float: right;
+	background: #EBDD0E;
+	padding: 30px 0px; 
+ 	font-family: 'Droid Serif', serif;
+	size: 20px;
+	margin-bottom: 40px;
+	}
+
+.entrySubmit {
+	border-radius: 4px;
+	background-color: #EBDD0E;
+	border: none;
+	color: #fff;
+	text-align: center;
+	font-size: 32px;
+	padding: 16px;
+	width: 220px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 36px;
+	box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.entrySubmit{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.entrySubmit:after {
+	content: '»';
+	position: absolute;
+	opacity: 0;  
+	top: 14px;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.entrySubmit:hover{
+	padding-right: 24px;
+	padding-left:8px;
+}
+
+.entrySubmit:hover:after {
+	opacity: 1;
+	right: 10px;
 }
