@@ -8,7 +8,7 @@ class Home extends React.Component {
     super(props)
     this.state = {
       currentDate: new Date(),
-      today: moment(new Date()).format("dddd")      
+      today: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a")      
   }
 }
 
@@ -20,7 +20,7 @@ class Home extends React.Component {
         <center><h1 className="titleBanner"><Link to="/">ᗪEᗩᖇ ᗪIᗩᖇY..</Link></h1></center>
         <div className="paper">
         <form className="paperss" id="entryForm">
-            <input type="text"  className="entryHeader" name="title" placeholder="the reason for my visit:"></input><br/>
+            {/* <input type="text"  className="entryHeader" name="title" placeholder="the reason for my visit:"></input><br/> */}
             <br/>
             <lable>♥ I just wanted to tell you ♥</lable><br/>
             <br/>
