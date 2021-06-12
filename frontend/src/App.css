@@ -27,3 +27,44 @@ Body {
 	position:relative;
 	top:1px;
 }
+
+* {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+  }
+  
+  body {
+	background: #f1f1f1;
+	font-family:helvetica neue, helvetica, arial, sans-serif;
+	font-weight:200;
+  }
+  
+  .paper {
+	width:960px;
+	height:1109px;
+	background: linear-gradient(to bottom, #F5CAA8, 29px,#00b0d7 1px);
+	margin:50px auto;
+	background-size: 100% 30px;
+	position:relative;
+	padding-top:150px;
+	padding-left:160px;
+	padding-right:20px;
+	overflow:hidden;
+	border-radius:5px;
+	-webkit-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+	-moz-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+	-ms-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+	-o-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+	box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  	}
+
+  .endnotes {
+	overflow:hidden; 
+	  overflow-y:scroll;
+	  border-right-color:slategrey ;
+	  border-bottom:  lightslategrey;
+	  border-width: thick;
+  }
