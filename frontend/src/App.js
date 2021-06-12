@@ -4,7 +4,7 @@ function App() {
   return (
     <>
     <div className="App">
-      <img src="src/images/banner.gif" alt="banner"></img>
+    <center><h1 className="titleBanner">ᗪEᗩᖇ ᗪIᗩᖇY..</h1></center>
     <center><button class="myButton">Past Notes</button><button class="myButton">Something New</button></center>
     </div>
     </>
