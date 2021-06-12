@@ -16,6 +16,7 @@ class Home extends React.Component {
             <br/>
             <input type="submit" name="submit" value="Okay"></input>
         </form>
+        <Name/>
         </div>
         <center><button class="myButton">Past Notes</button><button class="myButton"><Link to="/Home">B A C K H O M E</Link></button></center>
         </div>
