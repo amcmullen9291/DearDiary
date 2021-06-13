@@ -162,3 +162,8 @@ Link:active {
 	position:relative;
 	top:1px;
 }
+
+div.swal-modal {
+background: pink;
+font-family:Arial, Helvetica, sans-serif
+}

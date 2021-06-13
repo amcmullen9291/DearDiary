@@ -18,33 +18,35 @@ class Entry extends React.Component {
     render() {
       return (
           <>
-          <body>
         <div className="App">
         <center><h1 className="titleBanner"><Link to="/">ᗪEᗩᖇ ᗪIᗩᖇY..</Link></h1></center>
         <div className="paper">
         <form className="paperss" id="entryForm">
             {/* <input type="text"  className="entryHeader" name="title" placeholder="the reason for my visit:"></input><br/> */}
             <br/>
-            <lable>♥ I just wanted to tell you ♥</lable><br/>
+            <p>♥ I just wanted to tell you ♥</p><br/>
             <br/>
             <textarea className="papers" name="content"></textarea><br/>
             <br/>
-            <input className="entryDate" type="text" name="date" readonly="read-only" value={this.state.day + " " + this.state.date}></input>
+            <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date}></input>
             <br/>
             {/* <input className="entrySubmit" type="submit" name="submit" value="Okay"></input> */}
-            <button  className="entrySubmit" onclick="document.getElementById('entryForm').submit()">Okay</button>
+            <button  className="entrySubmit" >Okay</button>
         </form>
         {/* <Name/> */}
         </div>
-        <center><form onclick={NoSave}>
-          <button class="myButton" onclick={NoSave}>Past Notes</button></form><Link className="myButton" to="/Home">B A C K H O M E</Link></center>        </div>
-        </body>
+        <center><form onClick={NoSave}>
+          <button className="myButton" onClick={NoSave}>Past Notes</button></form><Link className="myButton" to="/Home">B A C K H O M E</Link></center>        </div>
         </>
       )
     }
   }
 
-  const NoSave = swal("Your entry was not saved!");
+   const NoSave = () => {
+    return (
+      swal("Hey wait:", "Your entry was not saved!").pause
+    )
+  } 
 
 
   export default Entry;
