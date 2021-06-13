@@ -167,3 +167,12 @@ div.swal-modal {
 background: pink;
 font-family:Arial, Helvetica, sans-serif
 }
+
+.entryTitle{
+	font-size: 36px;
+	justify-content: center;
+	text-align: center;
+	color:rgb(209, 56, 36);
+	background: #F5CAA8;
+	border: none;
+}

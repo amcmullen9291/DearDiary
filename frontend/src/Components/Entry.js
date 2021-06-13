@@ -26,6 +26,7 @@ class Entry extends React.Component {
             <br/>
             <p>♥ I just wanted to tell you ♥</p><br/>
             <br/>
+            <center><input type="text" className="entryTitle" name="title" defaultValue="My First Entry"></input></center>
             <textarea className="papers" name="content"></textarea><br/>
             <br/>
             <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date}></input>
@@ -35,7 +36,7 @@ class Entry extends React.Component {
         </form>
         {/* <Name/> */}
         </div>
-        <center><form onClick={NoSave}>
+        <center><form>
           <button className="myButton" onClick={NoSave}>Past Notes</button></form><Link className="myButton" to="/Home">B A C K H O M E</Link></center>        </div>
         </>
       )
@@ -44,7 +45,9 @@ class Entry extends React.Component {
 
    const NoSave = () => {
     return (
-      swal("Hey wait:", "Your entry was not saved!").pause
+      alert("Your entry was not saved"),
+      swal("","Your entry was not saved!")
+
     )
   } 
 
