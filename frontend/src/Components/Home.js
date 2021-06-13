@@ -7,7 +7,7 @@ class Home extends React.Component {
           <>
         <div className="App">
         <center><h1 className="titleBanner">ᗪEᗩᖇ ᗪIᗩᖇY..</h1></center>
-        <center><button class="myButton">Past Notes</button><button class="myButton"><Link to="/Entry">Something New</Link></button></center>
+        <center><button class="myButton">Past Notes</button><Link class="myButton" to="/Entry">Something New</Link></center>
         </div>
         </>
       )

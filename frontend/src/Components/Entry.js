@@ -34,7 +34,7 @@ class Home extends React.Component {
         </form>
         {/* <Name/> */}
         </div>
-        <center><button class="myButton">Past Notes</button><button class="myButton"><Link to="/Home">B A C K H O M E</Link></button></center>
+        <center><button class="myButton">Past Notes</button><Link className="myButton" to="/Home">B A C K H O M E</Link></center>
         </div>
         </body>
         </>
