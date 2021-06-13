@@ -7,18 +7,18 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     user.save
-    render json UsersSerializer.new(user)
+    render json: UsersSerializer.new(user)
   end
 
   def edit
     @user = User.find_by(params([:id])
-    render json UsersSerializer.new(@user)
+    render json: UsersSerializer.new(@user)
 
   end
 
   def update
     @user.update(user_params)
-    render json UsersSerializer.new(@user)
+    render json: UsersSerializer.new(@user)
   end
 
   private 
