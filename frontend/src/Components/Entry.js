@@ -2,14 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Name from './Name.js';
 import moment from 'moment';
+import swal from 'sweetalert';
 
-class Home extends React.Component {
+
+class Entry extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       currentDate: new Date(),
       day : moment(new Date()).format("dddd"),
-      date: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a")      
+      date: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a"),
   }
 }
 
@@ -34,12 +36,15 @@ class Home extends React.Component {
         </form>
         {/* <Name/> */}
         </div>
-        <center><button class="myButton">Past Notes</button><Link className="myButton" to="/Home">B A C K H O M E</Link></center>
-        </div>
+        <center><form onclick={NoSave}>
+          <button class="myButton" onclick={NoSave}>Past Notes</button></form><Link className="myButton" to="/Home">B A C K H O M E</Link></center>        </div>
         </body>
         </>
       )
     }
   }
 
-  export default Home;
+  const NoSave = swal("Your entry was not saved!");
+
+
+  export default Entry;
