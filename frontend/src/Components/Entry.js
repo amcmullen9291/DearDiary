@@ -45,8 +45,8 @@ class Entry extends React.Component {
      function NoSave(e){ 
        e.preventDefault();
        swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this imaginary file!",
+      title: "Hey, wait:",
+      text: "You have not saved your entry. Deleting this can't be undone!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -54,11 +54,11 @@ class Entry extends React.Component {
     })
     .then((willDelete) => {
       if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
+        swal("Poof! Sticks and Stones...", {
           icon: "success",
         });
       } else {
-        swal("Your imaginary file is safe!");
+        swal("Oh, okay.");
       }
     });
      }
