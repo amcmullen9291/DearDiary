@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Name from './Name.js';
 import moment from 'moment';
 import swal from 'sweetalert';
 
@@ -43,13 +42,28 @@ class Entry extends React.Component {
     }
   }
 
-   const NoSave = () => {
-    return (
-      alert("Your entry was not saved"),
-      swal("","Your entry was not saved!")
+     function NoSave(e){ 
+       e.preventDefault();
+       swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+      
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+     }
 
-    )
-  } 
+
 
 
   export default Entry;
