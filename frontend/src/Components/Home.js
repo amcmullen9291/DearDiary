@@ -6,8 +6,9 @@ class Home extends React.Component {
       return (
           <>
         <div className="App">
+        <section className="MainLogo"></section>
         <center><h1 className="titleBanner">ᗪEᗩᖇ ᗪIᗩᖇY..</h1></center>
-        <center><button  type="button" class="myButton">Past Notes</button><Link class="myButton" to="/Entry">Something New</Link></center>
+        <center><button  type="button" className="myButton">Past Notes</button><Link className="myButton" to="/Entry">Something New</Link></center>
         </div>
         </>
       )
