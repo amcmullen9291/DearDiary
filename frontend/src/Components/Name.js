@@ -1,9 +1,11 @@
 import React from 'react';
 
 class Name extends React.Component {
+
+  const Named = '';
     render() {
       return (
-          <div>Holly</div>
+          <div>Hello, {Named} </div>
       )
     }
   }
