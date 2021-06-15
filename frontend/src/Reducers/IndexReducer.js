@@ -1,36 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { ActionTypes } from '../Constants/Action.type';
 
-export default function Index() {
-    const [index, getIndex ] = useState('');
-
-    useEffect(() => {
-        getAllEntries();
-    }, [])
-
-    const ShowIndex = () => {
-    return getIndex.data.data.map(el =>{
-        return <aside key={el.attributes.id}>
-            <ul>
-                <a href={el.attributes.title}></a>
-                <li>{el.attributes.date}</li>
-            </ul>
-        </aside>
-    });
+const initialState = {
+    entries: [
+        {
+        id: 1,
+        title: "Welcome",
+        content: "Welcome to DearDiary- Default",
     }
-
-    const getAllEntries = () => {
-        axios.get('http://[::1]:3001')
-        .then((response) => {
-            const totalEntries = response.data.entries;
-            getIndex(totalEntries);
-        })
-        .catch(error => console.log("Error:", error));
-    }
-        return(
-            <div>
-            <ShowIndex/>
-            </div>
-        )
+    ]
 }
+
+export const IndexReducer = (state=initialState, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.SET_ENTRIES:
+            return state
+        default:
+            return state
+    }
+};
+    // const ShowIndex = () => {
+    // return getIndex.data.data.map(el =>{
+    //     return <aside key={el.attributes.id}>
+    //         <ul>
+    //             <a href={el.attributes.title}></a>
+    //             <li>{el.attributes.date}</li>
+    //         </ul>
+    //     </aside>
+    // });
+    // }
+
+    // const getAllEntries = () => {
+    //     axios.get('http://[::1]:3001')
+    //     .then((response) => {
+    //         const totalEntries = response.data.entries;
+    //         console.log(totalEntries);
+    //     })
+    //     .catch(error => console.log("Error:", error));
+    // }
 
