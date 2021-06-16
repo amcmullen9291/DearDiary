@@ -1,19 +1,13 @@
 import { ActionTypes } from '../Constants/Action.type';
 
 const initialState = {
-    entries: [
-        {
-        id: 1,
-        title: "Welcome",
-        content: "Welcome to DearDiary- Default",
-    }
-    ]
-}
+    entries: [],
+};
 
 export const IndexReducer = (state=initialState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_ENTRIES:
-            return state
+            return { ...state, entries: payload};
         default:
             return state
     }

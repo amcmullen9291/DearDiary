@@ -6,7 +6,7 @@ export const setEntries = (entries) => {
     }
 }
 
-export const selectedEntry = (entries) => {
+export const selectedEntry = (entry) => {
     return {
         type: ActionTypes.SELECTED_ENTRY,
         payload: entry,

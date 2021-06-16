@@ -25,7 +25,7 @@ class Entry extends React.Component {
             <br/>
             <p>♥ I just wanted to tell you ♥</p><br/>
             <br/>
-            <center><input type="text" className="entryTitle" name="title" defaultValue="My First Entry"></input></center>
+            <center><input type="text" className="entryTitle" name="title" defaultValue="My Title"></input></center>
             <textarea className="papers" name="content"></textarea><br/>
             <br/>
             <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date}></input>
