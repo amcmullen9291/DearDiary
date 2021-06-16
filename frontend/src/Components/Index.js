@@ -6,7 +6,7 @@ import { setEntries } from '../Actions/EntryActions';
 
 
 const Index = () => {
-  const entries = useSelector((state) => state);
+  const entries = useSelector((state) => state.Index.entries.data);
   const dispatch = useDispatch();
 
   const fetchIndex = async() => {
@@ -15,13 +15,12 @@ const Index = () => {
       console.log("Error:", error);
     });
     dispatch(setEntries(response.data));
-    console.log("Entries:", response.data.data);
   };
 
   useEffect(() => {
     fetchIndex();
   }, [])
-  console.log("Entries:", entries);
+  console.log("Index Entries:", entries);
   
   return (
     <div className="sidenav">

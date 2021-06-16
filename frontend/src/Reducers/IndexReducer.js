@@ -23,12 +23,3 @@ export const IndexReducer = (state=initialState, {type, payload}) => {
     // });
     // }
 
-    // const getAllEntries = () => {
-    //     axios.get('http://[::1]:3001')
-    //     .then((response) => {
-    //         const totalEntries = response.data.entries;
-    //         console.log(totalEntries);
-    //     })
-    //     .catch(error => console.log("Error:", error));
-    // }
-
