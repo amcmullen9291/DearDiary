@@ -1,22 +1,22 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
-const SelectedEntry = () => {
-  const entries = useSelector((state) => state.Index.entries);
-  const renderIndex = entries.map((entry) => {
-    const { id, title } = entry;
-    return(
-        <div key={id}>
-            {title}
-        </div>
-        );
-  })
 
-    return (
-      <>
-        {renderIndex}
-      </>
-    );
-  }
+ const SelectedEntry = () => {
+   const notes = useSelector((state) => state.Index.entries.data);
+   
+   if (notes) {
+  const title = notes[0].attributes.title;
+  const title2 = notes[1].attributes.title;
+  const title3 = notes[2].attributes.title;
 
-  export default SelectedEntry;
+   return (
+     <>
+     <li>{title}</li>
+     <li>{title2}</li>
+     <li>{title3}</li>
+     </>
+   )
+ }
+};
+export default SelectedEntry;
