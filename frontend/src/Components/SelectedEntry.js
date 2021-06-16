@@ -6,13 +6,17 @@ import { useSelector } from 'react-redux';
   const notes = useSelector((state) => state.Index.entries.data);
 
    if (notes) {
-      const renderIndex = notes.map(entry => {
-        return <ul key={entry.id}>{entry.title}</ul>
+      var renderIndex = notes.map(entry => {
+        const {id, title } = entry.attributes;
+        console.log(entry);
+        return (<ul key={id}>
+          <li><a href={entry.id}>{title}</a></li>
+          </ul>)
       })
     }
     return(
       <>
-      {SelectedEntry}
+      <div>{renderIndex}</div>
       </>
     )
   }

@@ -36,7 +36,7 @@ class Entry extends React.Component {
         {/* <Name/> */}
         </div>
         <center><form>
-          <button className="myButton" onClick={NoSave}>Past Notes</button></form><Link className="myButton" to="/Home">B A C K H O M E</Link></center>        </div>
+          <button className="myButton" onClick={NoSave}>Past Notes</button></form><Link className="myButton" to="/">B A C K H O M E</Link></center>        </div>
         </>
       )
     }

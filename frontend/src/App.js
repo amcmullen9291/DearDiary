@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './Components/Home.js';
 import Entry from './Components/Entry.js';
-import SelectedEntry from './Components/SelectedEntry'
+import ShowEntry from './Components/ShowEntry'
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Switch>
           <Route path={"/"} exact component={Home}/>
-          <Route path={"/Entry/:id"} exact component={SelectedEntry}/>
           <Route path={"/NewEntry"} exact component={Entry}/>
+          <Route path={"/:id"} exact component={ShowEntry}/>
           <Redirect to={"/"} />
         </Switch>
     </Router>
