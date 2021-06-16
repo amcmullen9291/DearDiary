@@ -23,7 +23,7 @@ const Index = () => {
 
   console.log(" Index Entries:", entries.Index.entries.data)
   return (
-    <div className="sidenav">
+    <div id="sidenav">
         <a href="#">Current Entries</a>
         <SelectedEntry/>
     </div>

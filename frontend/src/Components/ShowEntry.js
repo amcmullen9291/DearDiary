@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
+
 
 class ShowEntry extends Component {
     constructor(props){
@@ -12,10 +14,11 @@ class ShowEntry extends Component {
     render() {
       return(
           <>
-          <Link to={"/"}>R E T U R N H O M E</Link>
-      <div>
+        <Logo/>
+        <Link to={"/"}>R E T U R N H O M E</Link>
+        <div>
             <center>Entry Placeholder</center>
-      </div>
+        </div>
       </>
       )
     }
