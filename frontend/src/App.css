@@ -286,3 +286,8 @@ font-family:Arial, Helvetica, sans-serif
   .returnButton {
 	color: rgb(141, 10, 10);
   }
+  /* -----------footer------------ */
+
+  .bottomMarker{
+	  margin-right: 2%;
+  }

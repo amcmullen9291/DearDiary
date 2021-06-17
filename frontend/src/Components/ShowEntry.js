@@ -29,23 +29,24 @@ const ShowEntry = () => {
         }, [])
 
 
-const diaryDetails = () => {
     if (entry > 0) {
-        const title = entry.data.data.attributes.title;
-        const content = entry.data.data.attributes.content;
-        const date = entry.data.data.attributes.date;
+        var entryDetails = entry.map(notes => {
+
+        const { id, title, content, date } = notes.data.data.attributes;
+        // const title = entry.data.data.attributes.title;
+        // const content = entry.data.data.attributes.content;
+        // const date = entry.data.data.attributes.date;
         return(
             <>
-            <center>
+            <center key={id}>
             <div>{title}</div>
             <p>{content}</p>
             <div>{date}</div>
             </center>
             </>
-        )
-    } 
+        );
+    });
 }    
-
 return(
           <>
           <div className="App">
@@ -53,11 +54,11 @@ return(
         <div id="sidenav2">
         <center><Link to={"/"}>R E T U R N H O M E</Link></center>
         </div>
-            <p className="details">{diaryDetails()}</p>
+            <p className="details">{entryDetails}</p>
             <a href="/"><button className="entrySubmit">Okay</button></a>
         
         </div>
-        <footer></footer>
+        <div className="bottomMarker">✳ ✳ ✳ ✳  ✳ ✳ ✳ ✳ ✳ ✳ ✳ ✳ ✳ 🄳🄴🄰🅁 🄳🄸🄰🅁🅈</div>
       </>
       )
 }
