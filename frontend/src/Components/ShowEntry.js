@@ -28,25 +28,18 @@ const ShowEntry = () => {
             if(entryID && entryID !== "") fetchEntryContent();
         }, [])
 
-
-    if (entry > 0) {
-        var entryDetails = entry.map(notes => {
-
-        const { id, title, content, date } = notes.data.data.attributes;
-        // const title = entry.data.data.attributes.title;
-        // const content = entry.data.data.attributes.content;
-        // const date = entry.data.data.attributes.date;
-        return(
-            <>
-            <center key={id}>
-            <div>{title}</div>
-            <p>{content}</p>
-            <div>{date}</div>
-            </center>
-            </>
-        );
-    });
-}    
+        if (Object.keys(entry).length > 0) {
+            const { id, title, content, date } = entry.data.data.attributes;
+            var entryDetails = (
+              <>
+                <center key={id}>
+                  <div>{title}</div>
+                  <p>{content}</p>
+                  <div>{date}</div>
+                </center>
+              </>
+            );
+        }
 return(
           <>
           <div className="App">
