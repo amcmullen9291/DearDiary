@@ -11,6 +11,8 @@ const ShowEntry = () => {
     const entry = useSelector((state) => state.entry);
     const entryID = useParams();
     const dispatch = useDispatch();
+        const { title, date, content } = entry;
+        console.log("Title:", title)
     console.log("params:", entryID);
     console.log(entry);
     const url = `http://[::1]:3001/entries/${entryID.id}`
@@ -27,16 +29,33 @@ const ShowEntry = () => {
         useEffect(() => {
             if(entryID && entryID !== "") fetchEntryContent();
         }, [entryID])
+
+        // function Diary() {
+        //     if (entry) {
+        //           const {id, title, date } = entry.attributes;
+        //           return (
+        //               <>
+        //             <center>{title}</center>
+        //             <ul>{date}</ul>
+        //             </>
+        //     )
+        //     };
+        //     }
+        
 return(
           <>
           <div className="App">
         <Logo/>
-        <Link to={"/"}>R E T U R N H O M E</Link>
-        <div>
-            <center>Entry Placeholder</center>
+        <div id="sidenav2">
+        <center><Link to={"/"}>R E T U R N H O M E</Link></center>
         </div>
+        <center>{title}</center>
+            <a href="/"><button className="entrySubmit">Okay</button></a>
+        
         </div>
+        <footer></footer>
       </>
       )
 }
 export default ShowEntry;
+
