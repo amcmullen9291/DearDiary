@@ -13,14 +13,11 @@ export const IndexReducer = (state=initialState, {type, payload}) => {
     }
 };
 
-    // const ShowIndex = () => {
-    // return getIndex.data.data.map(el =>{
-    //     return <aside key={el.attributes.id}>
-    //         <ul>
-    //             <a href={el.attributes.title}></a>
-    //             <li>{el.attributes.date}</li>
-    //         </ul>
-    //     </aside>
-    // });
-    // }
-
+export const EntryContentReducer = (state={}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.SELECTED_ENTRY:
+            return { ...state, ...payload};
+        default:
+            return state;
+    }
+}

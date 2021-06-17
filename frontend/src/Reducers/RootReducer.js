@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { IndexReducer } from './IndexReducer';
+import { IndexReducer, EntryContentReducer } from './IndexReducer';
 
 const RootReducer = combineReducers({
-    Index :IndexReducer,
+    Index: IndexReducer,
+    entry: EntryContentReducer
 });
 
 export default RootReducer;

@@ -7,10 +7,11 @@ import { useSelector } from 'react-redux';
 
    if (notes) {
       var renderIndex = notes.map(entry => {
-        const {id, title } = entry.attributes;
-        console.log(entry);
+        const {id, title, date } = entry.attributes;
+        console.log(entry.id);
         return (<ul key={id}>
           <li><a href={`/DearDiary/entry/${entry.id}`}>{title}</a></li>
+          <ul>{date}</ul>
           </ul>)
       })
     }
