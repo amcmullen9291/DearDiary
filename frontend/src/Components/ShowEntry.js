@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { selectedEntry } from '../Actions/EntryActions';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 const ShowEntry = () => {
@@ -12,15 +12,15 @@ const ShowEntry = () => {
     const entryID = useParams();
     const dispatch = useDispatch();
     console.log("params:", entryID);
+    console.log(entry);
+    const url = `http://[::1]:3001/entries/${entryID.id}`
+    console.log("url:", url)
 
     const fetchEntryContent = async () => {
-        const response = await fetch("http://[::1]:3001/entries/2")
+        const response = await axios.get(url)
         .catch((error) => {
             console.log("Error:", error)
     })
-    .then(response => response.json())
-    .then(res => console.log(res))
-;
         dispatch(selectedEntry(response));
         console.log(response);
 };
