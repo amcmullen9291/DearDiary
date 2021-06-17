@@ -34,7 +34,7 @@ end
 
   private 
   def set_entry 
-    @entry = Entry.find_by(params[:id])
+    @entry = Entry.find_by(:id => params[:id])
   end
 
   def entry_params
