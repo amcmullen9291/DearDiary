@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
         const {id, title } = entry.attributes;
         console.log(entry);
         return (<ul key={id}>
-          <li><a href={entry.id}>{title}</a></li>
+          <li><a href={`/DearDiary/entry/${entry.id}`}>{title}</a></li>
           </ul>)
       })
     }

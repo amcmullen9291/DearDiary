@@ -12,6 +12,7 @@ export const IndexReducer = (state=initialState, {type, payload}) => {
             return state
     }
 };
+
     // const ShowIndex = () => {
     // return getIndex.data.data.map(el =>{
     //     return <aside key={el.attributes.id}>

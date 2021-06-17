@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Switch>
           <Route path={"/"} exact component={Home}/>
-          <Route path={"/NewEntry"} exact component={Entry}/>
-          <Route path={"/:id"} exact component={ShowEntry}/>
+          <Route path={"/DearDiary/NewEntry"} exact component={Entry}/>
+          <Route path={"/DearDiary/entry/:id"} exact component={ShowEntry}/>
           <Redirect to={"/"} />
         </Switch>
     </Router>

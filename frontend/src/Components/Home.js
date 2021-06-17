@@ -13,7 +13,7 @@ class Home extends React.Component {
         <center><Logo/></center>
           <section className="MainLogo"></section>
           <center><h1 className="titleBanner">☆ 𝕃𝕠𝕧𝕖, 𝕞𝕖 </h1></center>
-          <center><button  type="button" className="myButton" onClick={showMenu}>Past Notes</button><Link className="myButton" to="/NewEntry">Something New</Link></center>
+          <center><button  type="button" className="myButton" onClick={showMenu}>Past Notes</button><Link className="myButton" to="/DearDiary/NewEntry">Something New</Link></center>
           </div>
         </>
       )

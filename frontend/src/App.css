@@ -180,9 +180,9 @@ font-family:Arial, Helvetica, sans-serif
 
 /* -----------------Dairy entries Menu-------------- */
 
-.sidenavs {
+/* .sidenavs {
 	display:none;
-}
+} */
 /* The sidebar menu */
 #sidenav {
 	display: none;
@@ -195,6 +195,9 @@ font-family:Arial, Helvetica, sans-serif
 	background-color: salmon; /* Black */
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 20px;
+	overflow:hidden; 
+	overflow-y:scroll;
+	overflow-x: auto;
   }
   
   /* The navigation menu links */
@@ -226,4 +229,8 @@ font-family:Arial, Helvetica, sans-serif
   /* --------------main logo--------------- */
   .logo{
 	margin-left: 7%;
+  }
+
+  .returnButton {
+	color: rgb(141, 10, 10);
   }

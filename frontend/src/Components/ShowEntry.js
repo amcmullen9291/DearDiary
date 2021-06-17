@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { selectedEntry } from '../Actions/EntryActions';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import axios from 'axios';
 
 
-class ShowEntry extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            id : this.props.match.params.id,
-        }
-    }
-    
-    render() {
-      return(
+const ShowEntry = () => {
+    const entry = useSelector((state) => state.entry);
+    const entryID = useParams();
+    const dispatch = useDispatch();
+    console.log(entryID);
+
+    const fetchEntryContent = async () => {
+        const response = await axios
+        .get(`http://[::1]:3001/entries/${entryID}`)
+        .catch((error) => {
+            console.log("Error:", error)
+    });
+        dispatch(selectedEntry(response.data));
+};
+return(
           <>
         <Logo/>
         <Link to={"/"}>R E T U R N H O M E</Link>
@@ -21,5 +30,5 @@ class ShowEntry extends Component {
         </div>
       </>
       )
-    }
-}export default ShowEntry;
+}
+export default ShowEntry;
