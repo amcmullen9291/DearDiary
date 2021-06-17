@@ -1,4 +1,4 @@
 class EntriesSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :date, :title, :content
+  attributes :date, :title, :content, :id
 end

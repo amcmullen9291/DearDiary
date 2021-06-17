@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   get 'entries/update'
   get 'entries/destroy'
   get 'entries/index'
+  get 'entries/:id', to: 'entries#show'
   get 'users/new'
   get 'users/create'
   get 'users/edit'
   get 'users/update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
 end

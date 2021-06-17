@@ -25,7 +25,11 @@ class EntriesController < ApplicationController
   def update
     @entry.update(entry_params)
     render json: EntriesSerializer.new(@entry)
-  end
+  end 
+
+def show 
+  render json: EntriesSerializer.new(@entry)
+end
 
 
   private 
@@ -34,7 +38,7 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    permit(:entry).permit(:title, :date, :content)
+    permit(:entry).permit(:id, :title, :date, :content)
   end
 
 end
