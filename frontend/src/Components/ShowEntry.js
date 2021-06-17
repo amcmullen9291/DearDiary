@@ -11,12 +11,11 @@ const ShowEntry = () => {
     const entry = useSelector((state) => state.entry);
     const entryID = useParams();
     const dispatch = useDispatch();
-        const { title, date, content } = entry;
-        console.log("Title:", title)
-    console.log("params:", entryID);
-    console.log(entry);
+    // const { title, date, content } = entry;
+    console.log("Entry:", entry);
+    console.log("ID:", entryID.id);
     const url = `http://[::1]:3001/entries/${entryID.id}`
-    console.log("url:", url)
+    console.log("url:", url);
 
     const fetchEntryContent = async () => {
         const response = await axios.get(url)
@@ -24,24 +23,29 @@ const ShowEntry = () => {
             console.log("Error:", error)
     })
         dispatch(selectedEntry(response));
-        console.log(response);
 };
         useEffect(() => {
             if(entryID && entryID !== "") fetchEntryContent();
-        }, [entryID])
+        }, [])
 
-        // function Diary() {
-        //     if (entry) {
-        //           const {id, title, date } = entry.attributes;
-        //           return (
-        //               <>
-        //             <center>{title}</center>
-        //             <ul>{date}</ul>
-        //             </>
-        //     )
-        //     };
-        //     }
-        
+
+const diaryDetails = () => {
+    if (entry > 0) {
+        const title = entry.data.data.attributes.title;
+        const content = entry.data.data.attributes.content;
+        const date = entry.data.data.attributes.date;
+        return(
+            <>
+            <center>
+            <div>{title}</div>
+            <p>{content}</p>
+            <div>{date}</div>
+            </center>
+            </>
+        )
+    } 
+}    
+
 return(
           <>
           <div className="App">
@@ -49,7 +53,7 @@ return(
         <div id="sidenav2">
         <center><Link to={"/"}>R E T U R N H O M E</Link></center>
         </div>
-        <center>{title}</center>
+            <p className="details">{diaryDetails()}</p>
             <a href="/"><button className="entrySubmit">Okay</button></a>
         
         </div>
@@ -57,5 +61,7 @@ return(
       </>
       )
 }
+
+  
 export default ShowEntry;
 
