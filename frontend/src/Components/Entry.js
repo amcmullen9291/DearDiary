@@ -2,46 +2,64 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import swal from 'sweetalert';
+import axios from 'axios';
 
 class Entry extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
+  
     this.state = {
       currentDate: new Date(),
       day : moment(new Date()).format("dddd"),
       date: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a"),
-      onClick: null,
+      title: '',
+      content: '',
+    }
   }
-} 
-handleInputChanged(event) {
-  this.setState({
-   title: event.target.value,
-   content: event.target.value,
-   date: event.target.value
-  });
+  
+//   constructor(props){
+//     super(props)
+//     this.state = {
+//       currentDate: new Date(),
+//       day : moment(new Date()).format("dddd"),
+//       date: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a"),
+//   }
+// } 
+
+changeHandler = (e) => {
+  this.setState({[e.target.name]: e.target.value})
 }
 
+submitHandler = e => {
+  e.preventDefault();
+  console.log(this.state)
+
+  axios.post('http://[::1]:3001/entries/create', this.state)
+  .then(response => {console.log("Success:", response)})
+  .catch(error => {console.log("Error(s):", error)})
+
+  window.location = "/";
+}
 
     render() {
+      const {title, content, date } = this.state
       return (
           <>
         <div className="App">
         <center><h1 className="titleBanner"><Link to="/">ᗪEᗩᖇ ᗪIᗩᖇY..</Link></h1></center>
         <div className="paper">
-        <form className="paperss" id="entryForm">
+        <form className="paperss" name="entry" id="entryForm" onSubmit={this.submitHandler}>
             {/* <input type="text"  className="entryHeader" name="title" placeholder="the reason for my visit:"></input><br/> */}
             <br/>
             <p>♥ I just wanted to tell you ♥</p><br/>
             <br/>
-            <center><input type="text" className="entryTitle" name="title" defaultValue={this.state.title}></input></center>
-            <textarea className="papers" name="content" ref={content => this.content = content} value={this.state.content}></textarea><br/>
+            <center><input type="text" className="entryTitle" name="title" value={title} onChange={this.changeHandler}/></center>
+            <input type="text" className="papers" name="content" value={content} onChange={this.changeHandler}/><br/>
             <br/>
-            <div className="myentry">
-            <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date} ref={date => this.date = date}></input>
-            </div>
+            <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date} onChange={this.changeHandler}/>
             <br/>
             {/* <input className="entrySubmit" type="submit" name="submit" value="Okay"></input> */}
-            <button  className="entrySubmit" type="submit" onClick={postEntry.bind(this)}>Okay</button>
+            <button  className="entrySubmit" type="submit">Okay</button>
         </form>
         {/* <Name/> */}
         </div>
@@ -76,35 +94,32 @@ handleInputChanged(event) {
     });
      }
 
-    // function returnHome(){
-    //     window.location = "/";
-    // }
      // ------------------fetch Post request---------------
-     function postEntry(){
-      var title = this.state.title;
-      var content = this.state.content;
-      var date = this.state.date;
+  //    function postEntry(){
+  //     var title = this.title;
+  //     var content = this.content;
+  //     var date = this.date;
 
-     const entry = {
-       title: title,
-       content: content,
-       date: date
-     }
-   fetch(' http://[::1]:3001/entries/create', {
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/json',
-     },
-     body: JSON.stringify(entry),
-   },[])
-   .then(response => response.json())
-   .then(data => {
-     console.log('Success:', data);
-   })
-   .catch((error) => {
-     console.error('Error:', error);
-   });
-  }
+  //    const entry = {
+  //      title: title,
+  //      content: content,
+  //      date: date
+  //    }
+  //  fetch(' http://[::1]:3001/entries/create', {
+  //    method: 'POST',
+  //    headers: {
+  //      'Content-Type': 'application/json',
+  //    },
+  //    body: JSON.stringify(entry),
+  //  },[])
+  //  .then(response => response.json())
+  //  .then(data => {
+  //    console.log('Success:', data);
+  //  })
+  //  .catch((error) => {
+  //    console.error('Error:', error);
+  //  });
+  // }
 
 
 
