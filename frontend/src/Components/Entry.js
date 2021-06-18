@@ -11,10 +11,6 @@ class Entry extends React.Component {
       day : moment(new Date()).format("dddd"),
       date: moment(new Date()).format("MMMM Do YYYY, h:mm:ss a"),
       onClick: null,
-      title: '',
-      content: '',
-    
-      
   }
 } 
 handleInputChanged(event) {
@@ -37,8 +33,8 @@ handleInputChanged(event) {
             <br/>
             <p>♥ I just wanted to tell you ♥</p><br/>
             <br/>
-            <center><input type="text" className="entryTitle" name="title" defaultValue="My Title" ref={title => this.title = title}></input></center>
-            <textarea className="papers" name="content" ref={content => this.content = content}></textarea><br/>
+            <center><input type="text" className="entryTitle" name="title" defaultValue={this.state.title}></input></center>
+            <textarea className="papers" name="content" ref={content => this.content = content} value={this.state.content}></textarea><br/>
             <br/>
             <div className="myentry">
             <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date} ref={date => this.date = date}></input>
@@ -85,9 +81,9 @@ handleInputChanged(event) {
     // }
      // ------------------fetch Post request---------------
      function postEntry(){
-      const title = this.state.title;
-      const content = this.state.content;
-      const date = this.state.date;
+      var title = this.state.title;
+      var content = this.state.content;
+      var date = this.state.date;
 
      const entry = {
        title: title,
