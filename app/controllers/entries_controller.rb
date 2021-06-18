@@ -38,7 +38,7 @@ end
   end
 
   def entry_params
-    permit(:entry).permit(:id, :title, :date, :content)
+    params.require(:entry).permit(:id, :title, :date, :content)
   end
 
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'entries#index'
 
   get 'entries/new'
-  get 'entries/create'
+  post 'entries/create', to: 'entries#create'
   get 'entries/edit'
   get 'entries/update'
   get 'entries/destroy'
