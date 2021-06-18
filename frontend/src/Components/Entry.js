@@ -51,10 +51,10 @@ submitHandler = e => {
         <form className="paperss" name="entry" id="entryForm" onSubmit={this.submitHandler}>
             {/* <input type="text"  className="entryHeader" name="title" placeholder="the reason for my visit:"></input><br/> */}
             <br/>
-            <p>♥ I just wanted to tell you ♥</p><br/>
+            <p className="titleLabel">Ｉ ｊｕｓｔ ｗａｎｔｅｄ ｔｏ ｔｅｌｌ ｙｏｕ ...</p><br/>
             <br/>
-            <center><input type="text" className="entryTitle" name="title" value={title} onChange={this.changeHandler}/></center>
-            <input type="text" className="papers" name="content" value={content} onChange={this.changeHandler}/><br/>
+            <center><label className="titleLabel">ａｂｏｕｔ </label><input type="text" className="entryTitle" name="title" value={title} onChange={this.changeHandler}/></center>
+            <textarea type="text" className="papers" name="content" value={content} onChange={this.changeHandler}/><br/>
             <br/>
             <input className="entryDate" type="text" name="date" readOnly="read-only" defaultValue={this.state.day + " " + this.state.date} onChange={this.changeHandler}/>
             <br/>
