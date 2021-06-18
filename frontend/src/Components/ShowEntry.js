@@ -32,11 +32,13 @@ const ShowEntry = () => {
             const { id, title, content, date } = entry.data.data.attributes;
             var entryDetails = (
               <>
-                <center key={id}>
+              <div>
+                <center className="details" key={id}>
                   <div>{title}</div>
                   <p>{content}</p>
                   <div>{date}</div>
                 </center>
+                </div>
               </>
             );
         }
