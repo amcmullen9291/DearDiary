@@ -94,32 +94,6 @@ submitHandler = e => {
     });
      }
 
-     // ------------------fetch Post request---------------
-  //    function postEntry(){
-  //     var title = this.title;
-  //     var content = this.content;
-  //     var date = this.date;
-
-  //    const entry = {
-  //      title: title,
-  //      content: content,
-  //      date: date
-  //    }
-  //  fetch(' http://[::1]:3001/entries/create', {
-  //    method: 'POST',
-  //    headers: {
-  //      'Content-Type': 'application/json',
-  //    },
-  //    body: JSON.stringify(entry),
-  //  },[])
-  //  .then(response => response.json())
-  //  .then(data => {
-  //    console.log('Success:', data);
-  //  })
-  //  .catch((error) => {
-  //    console.error('Error:', error);
-  //  });
-  // }
 
 
 
