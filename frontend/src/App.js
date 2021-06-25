@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './Components/Home.js';
-// import Entry from './Components/Entry.js';
+import Entry from './Components/Entry.js';
 import ShowEntry from './Components/ShowEntry'
-import Entry from './Components/transistion';
+// import Entry from './Components/transistion';
 
 function App() {
   return (

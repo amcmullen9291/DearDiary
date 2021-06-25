@@ -1,15 +1,10 @@
-import React, { Component }  from 'react';
-// import { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import swal from 'sweetalert';
 import axios from 'axios';
-// import { useDispatch } from 'react-redux';
-// import { createEntry } from '../Actions/EntryActions'
 
-
-class Entry extends Component {
+class Entry extends React.Component {
   constructor(props) {
     super(props)
   
@@ -35,35 +30,16 @@ changeHandler = (e) => {
   this.setState({[e.target.name]: e.target.value})
 }
 
-//  submitHandler = e => {
-//   e.preventDefault();
-//   console.log(this.state)
-
-//   axios.post('http://[::1]:3001/entries/create', this.state)
-//   .then(response => {console.log("Success:", response)})
-//   .catch(error => {console.log("Error(s):", error)})
-  
-
-//   window.location = "/";
-// }
-
 submitHandler = e => {
   e.preventDefault();
   console.log(this.state)
 
-  return (dispatch) => {
-    dispatch({ type: 'CREATE_ENTRY'})
-    axios.post('http://[::1]:3001/entries/create', this.state)
-      .then(response => {console.log("Success:", response)})
-      .catch(error => {console.log("Error(s):", error)})
-          window.location = "/";
-  }
-}
+  axios.post('http://[::1]:3001/entries/create', this.state)
+  .then(response => {console.log("Success:", response)})
+  .catch(error => {console.log("Error(s):", error)})
 
-// useEffect = (() => {
-//   const dispatch = useDispatch();
-//   dispatch(createEntry());
-// }, [])
+  window.location = "/";
+}
 
     render() {
       const {title, content, date } = this.state
@@ -117,12 +93,8 @@ submitHandler = e => {
       }
     });
      }
-     
-    const mapStateToProps = (state) => ({
-      newEntry: state.newEntry
-    })
-    // const mapDispatchToProps = (dispatch, newEntry) => {
-    //     dispatch(createEntry(newEntry))
-    // };
 
-    export default connect(mapStateToProps)(Entry);
+
+
+
+  export default Entry;
