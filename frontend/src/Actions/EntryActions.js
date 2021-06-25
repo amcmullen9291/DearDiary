@@ -12,3 +12,12 @@ export const selectedEntry = (entry) => {
         payload: entry
     }
 }
+
+export const createEntry = (newEntry) => {
+    return {
+        type: ActionTypes.CREATE_ENTRY,
+        payload: newEntry
+    }
+}
+
+

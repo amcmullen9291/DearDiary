@@ -21,3 +21,12 @@ export const EntryContentReducer = (state={}, {type, payload}) => {
             return state;
     }
 }
+
+export const CreateEntryReducer = (state={}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.CREATE_ENTRY:
+            return { ...state, ...payload};
+        default:
+            return state;
+    }
+}
