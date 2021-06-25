@@ -14,8 +14,9 @@ const Index = () => {
       console.log("Error:", error);
     });
     dispatch(setEntries(response.data));
-    
   };
+
+  
 
   useEffect(() => {
     fetchIndex();
