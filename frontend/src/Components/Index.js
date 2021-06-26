@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import SelectedEntry from './SelectedEntry';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
@@ -30,6 +30,19 @@ const Index = () => {
     </div>
     )
 }
+const mapStateToProps = (state) => {
+  return {
+    entry: state.entry
+  }
+
+}
+
+     const mapDispatchToProps = (dispatch) => {
+       return{
+         findEntry: (entry) => { dispatch({type: 'SELECTED_ENTRY', entry})}
+       }
+     }
 
 
-  export default Index 
+
+  export default connect(mapStateToProps, mapDispatchToProps)(Index); 
