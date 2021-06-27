@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectedEntry } from '../Actions/EntryActions';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import axios from 'axios';
+import Store from '../Store'
 
 
 const ShowEntry = () => {
     const entry = useSelector((state) => state.entry);
     const entryID = useParams();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     // const { title, date, content } = entry;
     console.log("Entry:", entry);
     console.log("ID:", entryID.id);
@@ -19,10 +20,11 @@ const ShowEntry = () => {
 
     const fetchEntryContent = async () => {
         const response = await axios.get(url)
+        .then(res => {Store.dispatch(selectedEntry(res))})
         .catch((error) => {
             console.log("Error:", error)
     })
-        dispatch(selectedEntry(response));
+        // dispatch(selectedEntry(response));
 };
         useEffect(() => {
             if(entryID && entryID !== "") fetchEntryContent();

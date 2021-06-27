@@ -1,4 +1,5 @@
 import { ActionTypes } from '../Constants/Action.type';
+import concatenateReducers from 'redux-concatenate-reducers';
 
 const initialState = {
     entries: [],
@@ -22,11 +23,15 @@ export const EntryContentReducer = (state={}, {type, payload}) => {
     }
 }
 
-export const CreateEntryReducer = (state={}, {type, payload}) => {
+export const CreateEntryReducer = concatenateReducers([
+(state={}, {type, payload}) => {
     switch (type) {
         case ActionTypes.CREATE_ENTRY:
-            return { ...state, ...payload};
+            const entries = state.Index;
+            const newEntry = payload;
+            return { ...state, entries: entries + newEntry };
         default:
             return state;
     }
 }
+])
