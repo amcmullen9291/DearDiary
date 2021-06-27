@@ -38,6 +38,7 @@ const mapStateToProps = (state) => {
 }
 
      const mapDispatchToProps = (dispatch) => {
+       console.log("function is being called")
        return{
          findEntry: (entry) => { dispatch({type: 'SELECTED_ENTRY', entry})}
        }

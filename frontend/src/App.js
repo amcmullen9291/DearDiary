@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Home from './Components/Home.js';
 import Entry from './Components/Entry.js';
 import ShowEntry from './Components/ShowEntry'
-// import Entry from './Components/transistion';
 
 function App() {
   return (
