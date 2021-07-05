@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Index from './Index';
 import Logo from './Logo';
+// import LikeButton from './likeButton';
 
 class Home extends React.Component {
 
@@ -15,6 +16,7 @@ class Home extends React.Component {
           <center><h1 className="titleBanner">☆ 𝕃𝕠𝕧𝕖, 𝕞𝕖 </h1></center>
           <center><button  type="button" className="myButton" onClick={showMenu}>Past Notes</button><Link className="myButton" to="/DearDiary/NewEntry">Something New</Link></center>
           </div>
+          {/* <LikeButton/> */}
         </>
       )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Likes  from './likes'
+// import Likes  from './likes'
 
 
  const SelectedEntry = () => {
@@ -13,7 +13,7 @@ import Likes  from './likes'
         return (<ul key={id}>
           <li><a href={`/DearDiary/entry/${entry.id}`}>{title}</a></li>
           <ul>{date}</ul>
-          <ul><Likes/></ul>
+          {/* <ul><Likes/></ul> */}
           </ul>)
       })
     }
